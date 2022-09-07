@@ -1,0 +1,74 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: hidden;
+  padding: 0 5%;
+  position: relative;
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 3.5rem;
+      line-height: 50px;
+      text-align: center;
+    }
+
+    a {
+      cursor: pointer;
+      margin: 50px 0 100px 0;
+      display: flex;
+      align-items: center;
+      color: white;
+      border: 3px solid white;
+      border-radius: 10px;
+      height: 35px;
+      padding: 3px 15px;
+      font-weight: 600;
+      transition: all 0.5s;
+
+      img {
+        height: 100%;
+        margin-right: 5px;
+        transition: all 0.1s;
+      }
+
+      img:hover {
+        filter: brightness(0) saturate(100%) invert(13%) sepia(69%)
+          saturate(2768%) hue-rotate(228deg) brightness(83%) contrast(99%);
+      }
+
+      &:hover {
+        background-color: white;
+        color: #1c2571;
+      }
+
+      &:hover img {
+        filter: brightness(0) saturate(100%) invert(13%) sepia(69%)
+          saturate(2768%) hue-rotate(228deg) brightness(83%) contrast(99%);
+      }
+
+      img.scroll {
+        height: 76px;
+      }
+    }
+  }
+
+  .banner {
+    position: absolute;
+    right: 0;
+
+    img {
+      width: 700px;
+    }
+  }
+}

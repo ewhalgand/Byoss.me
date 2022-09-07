@@ -1,0 +1,31 @@
+import styles from "../styles/navbar.module.scss";
+import { Icon } from "@iconify/react";
+import { Link } from "react-router-dom";
+
+const Home = () => {
+  return (
+    <nav className={styles.container}>
+      <Link to="/">
+        <a className={styles.logo}>
+          <img src="/images/navbar/B.png" alt="Byoss logo" />
+        </a>
+      </Link>
+      <div className={styles.right}>
+        <div className={styles.languages}>
+          <span className={styles.toggleCountry}>
+            <img
+              src="/images/navbar/english-flag.png"
+              alt="english language flag"
+            />
+          </span>
+        </div>
+        <a className={styles.button} href="">
+          <Icon icon="bx:log-in" className={styles.icon} />
+          Login in
+        </a>
+      </div>
+    </nav>
+  );
+};
+
+export default Home;
