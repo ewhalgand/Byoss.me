@@ -1,4 +1,4 @@
-import styles from "../styles/navbar.module.scss";
+import styles from "./navbar.module.scss";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
 
@@ -19,10 +19,10 @@ const Home = () => {
             />
           </span>
         </div>
-        <a className={styles.button} href="">
+        <Link className={styles.button} to="/">
           <Icon icon="bx:log-in" className={styles.icon} />
           Login in
-        </a>
+        </Link>
       </div>
     </nav>
   );
