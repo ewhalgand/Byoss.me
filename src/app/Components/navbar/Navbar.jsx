@@ -7,14 +7,14 @@ const Home = () => {
     <nav className={styles.container}>
       <Link to="/">
         <a className={styles.logo}>
-          <img src="/images/navbar/B.png" alt="Byoss logo" />
+          <img src="/img/navbar/B.png" alt="Byoss logo" />
         </a>
       </Link>
       <div className={styles.right}>
         <div className={styles.languages}>
           <span className={styles.toggleCountry}>
             <img
-              src="/images/navbar/english-flag.png"
+              src="/img/navbar/english-flag.png"
               alt="english language flag"
             />
           </span>

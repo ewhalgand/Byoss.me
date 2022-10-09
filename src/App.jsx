@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import { Navbar } from "./app/Components";
-import { Home } from "./app/Pages";
+import { Footer, Navbar } from "./app/Components";
+import { Home, UserForm, SuccessCreate } from "./app/Pages";
 
 function App() {
   return (
@@ -8,7 +8,10 @@ function App() {
     <Navbar />
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/create" element={<UserForm />} />
+      <Route path="/create/success" element={<SuccessCreate />} />
     </Routes>
+    <Footer />
   </>
   )
 }
