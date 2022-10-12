@@ -5,17 +5,17 @@ const Footer = () => {
   let data = [
     {
       id: 1,
-      icon: "/img/footer/insta.svg",
+      icon: "/img/icons/insta.svg",
       link: "https://www.instagram.com/byoss.me/",
     },
     {
       id: 2,
-      icon: "/img/footer/twitter.svg",
+      icon: "/img/icons/twitter.svg",
       link: "https://twitter.com/Byoss_me",
     },
     {
       id: 3,
-      icon: "/img/footer/discord.svg",
+      icon: "/img/icons/discord.svg",
       link: "https://discord.gg/4vBcYhD3TZ",
     },
   ];

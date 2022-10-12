@@ -4,11 +4,9 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <nav className={styles.container}>
+    <nav className={styles.nav}>
       <Link to="/">
-        <a className={styles.logo}>
-          <img src="/img/navbar/B.png" alt="Byoss logo" />
-        </a>
+        <img className={styles.logo} src="/img/navbar/B.png" alt="Byoss logo" />
       </Link>
       <div className={styles.right}>
         <div className={styles.languages}>
@@ -19,9 +17,9 @@ const Home = () => {
             />
           </span>
         </div>
-        <Link className={styles.button} to="/">
+        <Link className={styles.button} to="/login">
           <Icon icon="bx:log-in" className={styles.icon} />
-          Login in
+          Se connecter
         </Link>
       </div>
     </nav>
