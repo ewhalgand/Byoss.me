@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { Footer, Navbar } from "./app/Components";
-import { Home, UserForm, SuccessCreate } from "./app/Pages";
-import Login from "./app/Pages/login/Login";
+import { Home, UserForm, SuccessCreate, Login } from "./app/Pages";
 
 function App() {
   return (
