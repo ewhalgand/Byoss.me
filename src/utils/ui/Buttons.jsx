@@ -10,6 +10,11 @@ const ButtonPrev = styled.button`
     border-radius: 8px;
     border: none;
     cursor: pointer;
+
+    .cursor {
+        cursor: not-alowed;
+        opacity: 0.50;
+    }
 `
 const ButtonNext = styled.button`
     padding: 8px 16px;

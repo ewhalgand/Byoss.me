@@ -1,48 +1,53 @@
-import React, { Component } from "react";
-import FormActivity from "./components/FormActivity";
-import FormDescription from "./components/FormDescription";
-import FormStart from "./components/FormStart";
-import FormVisibility from "./components/FormVisibility";
+import { useState } from "react";
+import styled from "styled-components";
+import { UseContextProvider } from "../../../context/StepperContext";
+import FormActivity from "./components/steps/FormActivity";
+import FormDescription from "./components/steps/FormDescription";
+import FormVisibility from "./components/steps/FormVisibility";
+import SuccessCreate from './../../success/SuccessCreate/SuccessCreate';
+import FormStart from './components/steps/FormStart';
 
-class UserForm extends Component {
-  state = {
-    step: 1,
-  };
+const UserForm = () => {
+  const [currentStep, setCurrentStep] = useState(1);
 
-  nextStep = () => {
-    const { step } = this.state;
-    this.setState({
-      step: step + 1,
-    });
-  };
-
-  prevStep = () => {
-    const { step } = this.state;
-    this.setState({
-      step: step - 1,
-    });
-  };
-
-  render() {
-    const { step } = this.state;
-
+  const displayStep = (step) => {
     switch (step) {
       case 1:
-        return <FormStart nextStep={this.nextStep} />;
+        return <FormStart handleClick={handleClick} currentStep={currentStep} />;
       case 2:
-        return (
-          <FormVisibility nextStep={this.nextStep} prevStep={this.prevStep} />
-        );
+        return <FormVisibility handleClick={handleClick} currentStep={currentStep} />;
       case 3:
-        return (
-          <FormActivity nextStep={this.nextStep} prevStep={this.prevStep} />
-        );
+        return <FormActivity handleClick={handleClick} currentStep={currentStep} />;
       case 4:
-        return <FormDescription nextStep={this.nextStep} prevStep={this.prevStep} />;
+        return <FormDescription handleClick={handleClick} currentStep={currentStep} />;
+      case 5: 
+        return <SuccessCreate handleClick={handleClick} currentStep={currentStep} />;
       default:
-        console.log("This is a multi-step form built with React.");
     }
-  }
+  };
+
+  const handleClick = (direction) => {
+    let newStep = currentStep;
+
+    direction === "next" ? newStep++ : newStep--;
+    // check if steps are within bounds
+    newStep > 0 && newStep <= setCurrentStep(newStep);
+  };
+
+  return (
+    <Form>
+      <UseContextProvider>{displayStep(currentStep)}</UseContextProvider>
+    </Form>
+  );
 }
+
+const Form = styled.section`
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 5%;
+  margin-top: 80px;
+`
 
 export default UserForm;

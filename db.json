@@ -1,0 +1,29 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Product 1",
+      "category": "electronics",
+      "price": 4000,
+      "description": "This is description about product 1"
+    },
+    {
+      "pseudo": "Saipatate",
+      "email": "saipatateyt@gmail.com",
+      "id": 2
+    },
+    {
+      "pseudo": "Saipatate",
+      "email": "saipatateyt@gmail.com",
+      "discordLink": "rgergth",
+      "instaLink": "zedzedze",
+      "twitterLink": "iulouimliom",
+      "youtubeLink": "rvrbyth",
+      "githubLink": "tyhtyuyk",
+      "website": "gfbfbfgb",
+      "favorite": "ee",
+      "description": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "id": 3
+    }
+  ]
+}

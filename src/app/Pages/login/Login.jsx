@@ -6,15 +6,16 @@ const Login = () => {
     <section className={styles.section}>
       <SmallTitle>Login</SmallTitle>
       <div className={styles.container}>
-        <a href="#">
+        <a href="https://api.byoss.me/login/discord">
           <img src="/img/icons/discord.svg" alt="icon" />
           <p>Login with Discord</p>
         </a>
-        <a href="#">
+        <a href="https://api.byoss.me/login/github">
           <img src="/img/icons/github.svg" alt="icon" />
           <p>Login with Github</p>
         </a>
-        <a href="#">
+        <a href="https://api.byoss.me/login/google">
+        <img src="/img/icons/google.svg" alt="icon" />
           <p>Login with Google</p>
         </a>
       </div>
