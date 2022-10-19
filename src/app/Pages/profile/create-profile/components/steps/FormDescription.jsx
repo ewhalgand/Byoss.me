@@ -7,7 +7,7 @@ import { ButtonNext, ButtonPrev } from "../../../../../../utils/ui/Buttons";
 import styled from "styled-components";
 
 export default function FormDescription({ handleClick, currentStep }) {
-  const { userData, setUserData } = useStepperContext();
+  const { userData, setUserData, userRole } = useStepperContext();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -15,8 +15,17 @@ export default function FormDescription({ handleClick, currentStep }) {
   };
 
   const handleSubmit = (e) => {
-    axios.post("http://localhost:3000/products", userData)
-    .then((res) => console.log(res))
+    axios.post("http://localhost:3000/products", {
+      data: {
+        userData,
+        userRole
+      }
+    })
+    .then((res) => {
+      if (res) {
+        window.location = "/create/success"
+      }
+    })
     .catch((err) => console.log(err))
   }
 

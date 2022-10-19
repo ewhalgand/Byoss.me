@@ -21,7 +21,7 @@ const UserForm = () => {
       case 4:
         return <FormDescription handleClick={handleClick} currentStep={currentStep} />;
       case 5: 
-        return <SuccessCreate handleClick={handleClick} currentStep={currentStep} />;
+        return <SuccessCreate />;
       default:
     }
   };

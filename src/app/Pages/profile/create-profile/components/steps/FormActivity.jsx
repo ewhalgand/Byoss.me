@@ -5,18 +5,35 @@ import { ButtonNext, ButtonPrev } from "../../../../../../utils/ui/Buttons";
 import styled from "styled-components";
 
 export default function FormActivity({ handleClick, currentStep }) {
-  const { userData, setUserData } = useStepperContext();
+  const { userData, setUserData, userRole, setUserRole } = useStepperContext();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
   };
 
+  const handleCheck = (e) => {
+    const { name } = e.target;
+    setUserRole({ ...userRole, name });
+  }
+
   return (
     <section>
       <BigTitle>Selectionnez votre activité</BigTitle>
       <div className={styles.container}>
         <div className={styles.left}>
+          <label className={styles.option_item}>
+            <input
+              type="checkbox"
+              name="owner"
+              className={styles.checkbox}
+              onChange={handleCheck}
+            />
+            <div className={styles.option_inner}>
+              <div className={styles.icon}></div>
+              <div className="name">Propiétaire/Fondateur</div>
+            </div>
+          </label>
           <button style={{ background: "#CBAF71" }}>
             Propriétaire/Fondateur
           </button>

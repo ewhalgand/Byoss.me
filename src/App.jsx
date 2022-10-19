@@ -17,7 +17,7 @@ function App() {
         window.location = "/"
       } 
     }
-  })
+  }, [])
 
   return (
   <>

@@ -12,6 +12,28 @@
     flex-direction: column;
     gap: 10px;
 
+    .option_item {
+      position: relative;
+      width: 350px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 8px 12px;
+      color: #fff;
+      background: #CBAF71;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-align: center;
+
+      .checkbox {
+        position: absolute;
+        left: 0;
+        right: 0;
+        // opacity: 0;
+        cursor: pointer;
+      }
+    }
+
     button {
       width: 350px;
       font-size: 1.1rem;
