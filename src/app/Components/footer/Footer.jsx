@@ -19,7 +19,6 @@ const Footer = () => {
       link: "https://discord.gg/4vBcYhD3TZ",
     },
   ];
-  //coucou de berch
   return (
     <footer>
       <div className={styles.left}>
