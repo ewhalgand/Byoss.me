@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Footer, Navbar } from "./app/Components";
-import { Home, UserForm, SuccessCreate, Login } from "./app/Pages";
+import { Home, UserForm, SuccessCreate, Login, EditProfile } from "./app/Pages";
 
 function App() {
 
@@ -27,6 +27,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/create" element={<UserForm />} />
       <Route path="/create/success" element={<SuccessCreate />} />
+      <Route path="/profile/edit" element={<EditProfile />} />
     </Routes>
     <Footer />
   </>
