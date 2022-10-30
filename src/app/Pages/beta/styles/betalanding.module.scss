@@ -25,11 +25,15 @@
 	    padding: 0 15%;
 
 		.logo {
-			width: clamp(250px, 75%, 700px);
+			width: clamp(300px, 75%, 700px);
 		}
 
 		.subtitle {
 			color: rgba(255, 156, 156, 1);
+
+			@media screen and (max-width: 900px) {
+				margin-bottom: 50px;
+			}
 		}
 
 		a {
@@ -67,13 +71,13 @@
                 display: flex;
                 align-items: center;
                 color: white;
-                border: 3px solid white;
+                border: 2px solid white;
                 border-radius: 10px;
                 height: 35px;
-                padding: 6px 15px;
+                padding: 8px 12px;
                 font-weight: 600;
                 transition: all 0.5s;
-                width: 210px;
+                width: 300px;
 
                 img {
                     height: 100%;
@@ -127,14 +131,9 @@
 			    align-items: center;
 			    display: contents;
 
-                a{
-                    transition: none;
-                    margin: 25px 0 0 0; 
-					padding: 8px 12px;
-					border: 2px solid #ffffff;
-					font-size: x-large;
-					height: fit-content;
-                }
+				a {
+					margin: 10px 0 10px 0;
+				}
 			}
 		}
 
