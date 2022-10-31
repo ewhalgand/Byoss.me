@@ -86,7 +86,7 @@
                 height: 40px;
                 width: 500px;
 
-                border: #ffffffA0 solid 2px;
+                border: #ffffffff solid 2px;
                 border-radius: 10px;
                 background-color: #00000000;
 
@@ -112,7 +112,7 @@
             height: 40px;
             width: 450px;
 
-            border: #ffffffA0 solid 2px;
+            border: #ffffffff solid 2px;
             border-radius: 10px;
             background-color: #00000000;
 
@@ -138,7 +138,7 @@
             height: 40px;
             width: 450px;
 
-            border: #ffffffA0 solid 2px;
+            border: #ffffffff solid 2px;
             border-radius: 10px;
             background-color: #00000000;
 
@@ -159,7 +159,7 @@
             height: 150px;
             width: 800px;
 
-            border: #ffffffA0 solid 2px;
+            border: #ffffffff solid 2px;
             border-radius: 10px;
             background-color: #00000000;
 
@@ -194,6 +194,13 @@
         width: auto;
         height: 100%;
         align-items: center;
+        text-align: left;
+
+        .container {
+            text-align: left;
+            display: block;
+            justify-content: left;
+        }
 
 
         .activitiesSubtitle{
@@ -201,29 +208,128 @@
             color: #ffffff;
             font-size: 25px;
             font-weight: 10;
-            margin-left: -340px;
 
-            text-align: center;
+            text-align: left;
         }
 
-        .selectMenu {
-            width: 700px;
+        svg {
+            color: currentColor;
+        }
+    }
 
+    .workfor {
+
+        margin-top: 20px;
+        
+        .container {
             margin-top: 20px;
-            margin-right: 20px;
-            height: 150px;
-            width: 800px;
 
-            border: #ffffffA0 solid 2px;
-            border-radius: 10px;
-            background-color: #00000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
+            .input {
+                height: 40px;
+                width: 450px;
+    
+                border: #ffffffff solid 2px;
+                border-radius: 10px;
+                background-color: #00000000;
+    
+                color: #ffffff;
+                text-decoration: none;
+    
+                outline: none;
+                padding-left: 10px;
+
+                margin-left: 10px;
+            }
+
+            .tag {
+                display: flex;
+                justify-content: left;
+                padding: 5px 10px;
+                margin-right: 10px;
+
+                border-radius: 10px;
+
+                width: 450px;
+                height: 40px;
+
+                .tagLabel {
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                    
+                    width: 100%;
+
+                    h2 {
+                        color: #ffffff;
+                    }
+
+                }
+            }
+
+            .tagIcon {
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                text-align: left;
+
+                width: 40px;
+            }
+        }
+    }
+
+    .langages {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        height: 100%;
+        align-items: center;
+        text-align: left;
+
+        .container {
+            text-align: left;
+            display: block;
+            justify-content: left;
+        }
+
+
+        .langagesSubtitle{
+            font-family: Poppins;
             color: #ffffff;
-            text-decoration: none;
+            font-size: 25px;
+            font-weight: 10;
 
-            outline: none;
-            padding-left: 10px;
-            padding-top: 10px;
+            text-align: left;
+        }
+    }
+
+    .softwares {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        height: 100%;
+        align-items: center;
+        text-align: left;
+
+        .container {
+            text-align: left;
+            display: block;
+            justify-content: left;
+        }
+
+
+        .softwaresSubtitle{
+            font-family: Poppins;
+            color: #ffffff;
+            font-size: 25px;
+            font-weight: 10;
+
+            text-align: left;
         }
     }
 }

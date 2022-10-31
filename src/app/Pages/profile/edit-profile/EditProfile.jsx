@@ -13,24 +13,99 @@ const EditProfile = () => {
         {value: 'youtubeur', label: 'Youtubeur / Vidéaste'},
         {value: 'web_designer', label: 'Web Designer'}
     ]
-      
-      const colourStyles = {
-        control: (styles) => ({ ...styles, backgroundColor: 'white' }),
-        option: (styles, { data, isDisabled, isFocused, isSelected }) => {
-          return {
-            ...styles,
-            backgroundColor: '#ffffff00',
-      
-            ':active': {
-              ...styles[':active'],
-              backgroundColor: isDisabled
-            },
-          };
+
+    let langs = [
+        {value: 'python', label: 'Python'},
+        {value: 'javascript', label: 'Javascript'},
+        {value: 'typescript', label: 'Typescript'},
+        {value: 'java', label: 'Java'},
+        {value: 'c', label: 'C'},
+        {value: 'c++', label: 'C++'},
+        {value: 'c#', label: 'C#'},
+        {value: 'php', label: 'PHP'},
+        {value: 'html', label: 'HTML'},
+        {value: 'css', label: 'CSS'},
+        {value: 'swift', label: 'Swift'},
+        {value: 'kotlin', label: 'Kotlin'},
+        {value: 'ruby', label: 'Ruby'},
+        {value: 'go', label: 'Go'},
+        {value: 'rust', label: 'Rust'},
+        {value: 'scala', label: 'Scala'},
+        {value: 'jupyter', label: 'Jupyter'},
+        {value: 'docker', label: 'Docker'},
+        {value: 'bash', label: 'Bash'},
+        {value: 'react', label: 'React'},
+        {value: 'vue', label: 'Vue'},
+        {value: 'angular', label: 'Angular'},
+        {value: 'django', label: 'Django'},
+        {value: 'flask', label: 'Flask'},
+        {value: 'nodejs', label: 'NodeJS'},
+        {value: 'laravel', label: 'Laravel'},
+        {value: 'symfony', label: 'Symfony'},
+        {value: 'spring', label: 'Spring'},
+        {value: 'express', label: 'Express'},
+        {value: 'mongodb', label: 'MongoDB'}
+    ]
+
+    let softwares = [
+        {value: 'eclipse', label: 'Eclipse'},
+        {value: 'vscode', label: 'Visual Studio Code'},
+        {value: 'webstorm', label: 'WebStorm'},
+        {value: 'pycharm', label: 'PyCharm'},
+        {value: 'intellij', label: 'IntelliJ IDEA'}
+    ]
+
+    let activitiesComponent = document.getElementById('activities')
+
+    function updateTags() {
+        if (activitiesComponent.innerHTML.includes('Propriétaire / Fondateur')){
+            console.log('OUI')
+        }
+    }
+
+
+    const colourStyles = {
+        control: (styles) => { 
+        return {
+            ...styles, 
+
+            marginTop: '0px',
+            marginRight: '20px',
+            width: '1000px',
+
+            border: '#ffffffff solid 2px',
+            borderRadius: '10px',
+            backgroundColor: '#00000000',
+
+            color: '#ffffff',
+            textDecoration: 'none',
+
+            outline: 'none',
+            padding: '10px'
+        }},
+        multiValue: (styles, { data }) => {
+            return {
+              ...styles,
+              backgroundColor: '#D9D9D9',
+              color: '#4D4D4D',
+              fontSize: '20px',
+              fontHeight: '10px'
+            };
         },
-        input: (styles) => ({ ...styles, ...{ color: 'black' } }),
-        placeholder: (styles) => ({ ...styles}),
-        singleValue: (styles, { data }) => ({ ...styles}),
-      };
+        multiValueLabel: (styles, { data }) => ({
+            ...styles,
+            padding: '5px',
+        }),
+        multiValueRemove: (styles, { data }) => ({
+            ...styles,
+            color: 'unset',
+            color: '#4D4D4D'
+        }),
+        placeholder: (styles) => ({
+            ...styles,
+            color: '#ffffff',
+        })
+    };
 
     return (
         <main className={styles.main}>
@@ -72,9 +147,109 @@ const EditProfile = () => {
 
             <h2 className={styles.subtitle}>VOS ACTIVITÉS</h2>
 
-            <section className={styles.activities}>
-                <h2 className={styles.activitiesSubtitle}>Ajouter / Retirer des activités</h2>
-                <CreatableSelect styles={colourStyles} className={styles.selectMenu} isMulti options={activities} placeholder='Selectionner des activités'/>
+            <section className={styles.activities} id='activities'>
+                <div className={styles.container}>
+                    <h2 className={styles.activitiesSubtitle}>Ajouter / Retirer des activités</h2>
+                    <CreatableSelect onInputChange={updateTags} styles={colourStyles} className={styles.selectMenu} isMulti options={activities} placeholder='Selectionner des activités'/>
+                </div>
+            </section>
+
+            <section className={styles.workfor}>
+                <div className={styles.container}>
+                    <div className={styles.tag} style={{backgroundColor: '#CBAF71'}}>
+                        <img className={styles.tagIcon} src="/img/profile/edit/crown.svg" />
+                        <div className={styles.tagLabel}>
+                            <h2>Propriétaire / Fondateur</h2>
+                        </div>
+                    </div>
+                    <input className={styles.input} type="text" />
+                </div>
+                <div className={styles.container}>
+                    <div className={styles.tag} style={{backgroundColor: '#3E405A'}}>
+                        <img className={styles.tagIcon} src="/img/profile/edit/brush.svg" />
+                        <div className={styles.tagLabel}>
+                            <h2>Graphiste</h2>
+                        </div>
+                    </div>
+                    <input className={styles.input} type="text" />
+                </div>
+                <div className={styles.container}>
+                    <div className={styles.tag} style={{backgroundColor: '#169A4B'}}>
+                        <img className={styles.tagIcon} src="/img/profile/edit/video.svg" />
+                        <div className={styles.tagLabel}>
+                            <h2>Monteur / Motion Designer</h2>
+                        </div>
+                    </div>
+                    <input className={styles.input} type="text" />
+                </div>
+                <div className={styles.container}>
+                    <div className={styles.tag} style={{backgroundColor: '#6476A6'}}>
+                        <img className={styles.tagIcon} src="/img/profile/edit/shield.svg" />
+                        <div className={styles.tagLabel}>
+                            <h2>Modérateur</h2>
+                        </div>
+                    </div>
+                    <input className={styles.input} type="text" />
+                </div>
+                <div className={styles.container}>
+                    <div className={styles.tag} style={{backgroundColor: '#6181DC'}}>
+                        <img className={styles.tagIcon} src="/img/profile/edit/code.svg" />
+                        <div className={styles.tagLabel}>
+                            <h2>Développeur</h2>
+                        </div>
+                    </div>
+                    <input className={styles.input} type="text" />
+                </div>
+                <div className={styles.container}>
+                    <div className={styles.tag} style={{backgroundColor: '#8F3FF4'}}>
+                        <img className={styles.tagIcon} src="/img/profile/edit/note.svg" />
+                        <div className={styles.tagLabel}>
+                            <h2>Musicien / Compositeur</h2>
+                        </div>
+                    </div>
+                    <input className={styles.input} type="text" />
+                </div>
+                <div className={styles.container}>
+                    <div className={styles.tag} style={{backgroundColor: '#CC6371'}}>
+                        <img className={styles.tagIcon} src="/img/profile/edit/clap.svg" />
+                        <div className={styles.tagLabel}>
+                            <h2>Youtubeur / Vidéaste</h2>
+                        </div>
+                    </div>
+                    <input className={styles.input} type="text" />
+                </div>
+                <div className={styles.container}>
+                    <div className={styles.tag} style={{backgroundColor: '#FF8E87'}}>
+                        <img className={styles.tagIcon} src="/img/profile/edit/window.svg" />
+                        <div className={styles.tagLabel}>
+                            <h2>Web Designer</h2>
+                        </div>
+                    </div>
+                    <input className={styles.input} type="text" />
+                </div>
+                <div className={styles.container}>
+                    <div className={styles.tag} style={{backgroundColor: '#719ACB'}}>
+                        <img className={styles.tagIcon} src="/img/profile/edit/other.svg" />
+                        <div className={styles.tagLabel}>
+                            <h2>Unknown</h2>
+                        </div>
+                    </div>
+                    <input className={styles.input} type="text" />
+                </div>
+            </section>
+
+            <section className={styles.langages}>
+                <div className={styles.container}>
+                    <h2 className={styles.langagesSubtitle}>Ajouter / Retirer des technologies / langages de code</h2>
+                    <CreatableSelect styles={colourStyles} className={styles.selectMenu} isMulti options={langs} placeholder='Selectionner des langages'/>
+                </div>
+            </section>
+
+            <section className={styles.softwares}>
+                <div className={styles.container}>
+                    <h2 className={styles.softwaresSubtitle}>Ajouter / Retirer des logiciels</h2>
+                    <CreatableSelect styles={colourStyles} className={styles.selectMenu} isMulti options={softwares} placeholder='Selectionner des langages'/>
+                </div>
             </section>
         </main>
     )
