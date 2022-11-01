@@ -1,7 +1,10 @@
 import styles from "./styles/editprofile.module.scss";
 import CreatableSelect from 'react-select/creatable';
+import { useState } from "react";
 
 const EditProfile = () => {
+
+    let userChoices = []
 
     let activities = [
         {value: 'propriétaire', label:'Propriétaire / Fondateur'},
@@ -55,12 +58,24 @@ const EditProfile = () => {
         {value: 'intellij', label: 'IntelliJ IDEA'}
     ]
 
-    let activitiesComponent = document.getElementById('activities')
+    
 
-    function updateTags() {
-        if (activitiesComponent.innerHTML.includes('Propriétaire / Fondateur')){
-            console.log('OUI')
-        }
+    setInterval (() => {
+        let activitiesComponent = document.getElementById('activities')
+        let workforComponent = document.getElementById('workfor')
+
+        activities.forEach(element => {
+            if(userChoices.includes(element)){
+                document.getElementById(element.value+'Container').style.display = 'flex'
+            }
+            else{
+                document.getElementById(element.value+'Container').style.display = 'none'
+            }
+        });
+    }, 1000);
+
+    function setUserChoices(userChoice) {
+        userChoices = userChoice
     }
 
 
@@ -71,7 +86,7 @@ const EditProfile = () => {
 
             marginTop: '0px',
             marginRight: '20px',
-            width: '1000px',
+            width: 'auto',
 
             border: '#ffffffff solid 2px',
             borderRadius: '10px',
@@ -125,37 +140,35 @@ const EditProfile = () => {
             <section className={styles.socials}>
                 <div>
                     <input className={styles.input} type="text" placeholder="pseudo Discord (Facultatif)" />
-                    <input className={styles.input} type="text" placeholder="pseudo Youtube (Facultatif)" />
-                </div>
-                <div>
                     <input className={styles.input} type="text" placeholder="pseudo Instagram (Facultatif)" />
-                    <input className={styles.input} type="text" placeholder="pseudo Github (Facultatif)" />
+                    <input className={styles.input} type="text" placeholder="pseudo Twitter (Facultatif)" />
                 </div>
                 <div>
-                    <input className={styles.input} type="text" placeholder="pseudo Twitter (Facultatif)" />
+                    <input className={styles.input} type="text" placeholder="pseudo Youtube (Facultatif)" />
+                    <input className={styles.input} type="text" placeholder="pseudo Github (Facultatif)" />
                     <input className={styles.input} type="url" placeholder="Site Web (Facultatif)" />
                 </div>
+                <div className={styles.more}>
+                    <div>
+                        <img className={styles.flameIcon}src="/img/profile/edit/flame.svg" /><input className={styles.input} type="text" placeholder="Jeu ou communauté préférée (Facultatif)" />
+                    </div>
+                    <div>
+                        <textarea rows="5" cols="100" className={styles.inputArea} type="textfield" placeholder="Description du profil" />
+                    </div>
+                </div>
             </section> 
-            <section className={styles.more}>
-                <div>
-                    <img className={styles.flameIcon}src="/img/profile/edit/flame.svg" /><input className={styles.input} type="text" placeholder="Jeu ou communauté préférée (Facultatif)" />
-                </div>
-                <div>
-                    <textarea rows="5" cols="100" className={styles.inputArea} type="textfield" placeholder="Description du profil" />
-                </div>
-            </section>
 
             <h2 className={styles.subtitle}>VOS ACTIVITÉS</h2>
 
             <section className={styles.activities} id='activities'>
                 <div className={styles.container}>
                     <h2 className={styles.activitiesSubtitle}>Ajouter / Retirer des activités</h2>
-                    <CreatableSelect onInputChange={updateTags} styles={colourStyles} className={styles.selectMenu} isMulti options={activities} placeholder='Selectionner des activités'/>
+                    <CreatableSelect onChange={(choice) => setUserChoices(choice)} styles={colourStyles} className={styles.selectMenu} isMulti options={activities} placeholder='Selectionner des activités'/>
                 </div>
             </section>
 
-            <section className={styles.workfor}>
-                <div className={styles.container}>
+            <section className={styles.workfor} id='workfor'>
+                <div className={styles.container} id='propriétaireContainer'>
                     <div className={styles.tag} style={{backgroundColor: '#CBAF71'}}>
                         <img className={styles.tagIcon} src="/img/profile/edit/crown.svg" />
                         <div className={styles.tagLabel}>
@@ -164,7 +177,7 @@ const EditProfile = () => {
                     </div>
                     <input className={styles.input} type="text" />
                 </div>
-                <div className={styles.container}>
+                <div className={styles.container} id='graphisteContainer'>
                     <div className={styles.tag} style={{backgroundColor: '#3E405A'}}>
                         <img className={styles.tagIcon} src="/img/profile/edit/brush.svg" />
                         <div className={styles.tagLabel}>
@@ -173,7 +186,7 @@ const EditProfile = () => {
                     </div>
                     <input className={styles.input} type="text" />
                 </div>
-                <div className={styles.container}>
+                <div className={styles.container} id='monteurContainer'>
                     <div className={styles.tag} style={{backgroundColor: '#169A4B'}}>
                         <img className={styles.tagIcon} src="/img/profile/edit/video.svg" />
                         <div className={styles.tagLabel}>
@@ -182,7 +195,7 @@ const EditProfile = () => {
                     </div>
                     <input className={styles.input} type="text" />
                 </div>
-                <div className={styles.container}>
+                <div className={styles.container} id='modérateurContainer'>
                     <div className={styles.tag} style={{backgroundColor: '#6476A6'}}>
                         <img className={styles.tagIcon} src="/img/profile/edit/shield.svg" />
                         <div className={styles.tagLabel}>
@@ -191,7 +204,7 @@ const EditProfile = () => {
                     </div>
                     <input className={styles.input} type="text" />
                 </div>
-                <div className={styles.container}>
+                <div className={styles.container} id='développeurContainer'>
                     <div className={styles.tag} style={{backgroundColor: '#6181DC'}}>
                         <img className={styles.tagIcon} src="/img/profile/edit/code.svg" />
                         <div className={styles.tagLabel}>
@@ -200,7 +213,7 @@ const EditProfile = () => {
                     </div>
                     <input className={styles.input} type="text" />
                 </div>
-                <div className={styles.container}>
+                <div className={styles.container} id='musicienContainer'>
                     <div className={styles.tag} style={{backgroundColor: '#8F3FF4'}}>
                         <img className={styles.tagIcon} src="/img/profile/edit/note.svg" />
                         <div className={styles.tagLabel}>
@@ -209,7 +222,7 @@ const EditProfile = () => {
                     </div>
                     <input className={styles.input} type="text" />
                 </div>
-                <div className={styles.container}>
+                <div className={styles.container} id='youtubeurContainer'>
                     <div className={styles.tag} style={{backgroundColor: '#CC6371'}}>
                         <img className={styles.tagIcon} src="/img/profile/edit/clap.svg" />
                         <div className={styles.tagLabel}>
@@ -218,7 +231,7 @@ const EditProfile = () => {
                     </div>
                     <input className={styles.input} type="text" />
                 </div>
-                <div className={styles.container}>
+                <div className={styles.container} id='web_designerContainer'>
                     <div className={styles.tag} style={{backgroundColor: '#FF8E87'}}>
                         <img className={styles.tagIcon} src="/img/profile/edit/window.svg" />
                         <div className={styles.tagLabel}>
@@ -227,7 +240,7 @@ const EditProfile = () => {
                     </div>
                     <input className={styles.input} type="text" />
                 </div>
-                <div className={styles.container}>
+                {/* <div className={styles.container} id='other'>
                     <div className={styles.tag} style={{backgroundColor: '#719ACB'}}>
                         <img className={styles.tagIcon} src="/img/profile/edit/other.svg" />
                         <div className={styles.tagLabel}>
@@ -235,7 +248,7 @@ const EditProfile = () => {
                         </div>
                     </div>
                     <input className={styles.input} type="text" />
-                </div>
+                </div>*/}
             </section>
 
             <section className={styles.langages}>
@@ -249,6 +262,14 @@ const EditProfile = () => {
                 <div className={styles.container}>
                     <h2 className={styles.softwaresSubtitle}>Ajouter / Retirer des logiciels</h2>
                     <CreatableSelect styles={colourStyles} className={styles.selectMenu} isMulti options={softwares} placeholder='Selectionner des langages'/>
+                </div>
+            </section>
+
+            <section className={styles.buttons}>
+                <button className={styles.more}><img src="/img/profile/edit/profilemore.svg" />Plus sur mon profil</button>
+                <div className={styles.container}>
+                    <button className={styles.cancel}>Annuler</button>
+                    <button className={styles.confirm}>Enregistrer</button>
                 </div>
             </section>
         </main>
