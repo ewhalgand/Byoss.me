@@ -53,8 +53,15 @@
                 width: 150px;
 
                 .editbutton {
-                    width: auto;
-                    height: auto;
+                    width: 0.1px;
+                    height: 0.1px;
+                    overflow: hidden;
+                    z-index: -1;
+
+                    position: absolute;
+
+                    background-color: #00000000;
+                    border: none;
                 }
 
                 .editImage {
@@ -201,6 +208,7 @@
             outline: none;
             padding-left: 10px;
             padding-top: 10px;
+            padding: 10px;
 
             resize: none;
         }
@@ -237,7 +245,7 @@
         
         font-family: Poppins;
         color: #ffffff;
-        font-size: clamp(20px, 75%, 80px);
+        font-size: clamp(30px, 5vw, 80px);
     }
 
     .activities {
@@ -295,7 +303,7 @@
             justify-content: center;
             align-items: center;
 
-            width: clamp(200px, 75%, 1000px);
+            width: clamp(200px, 100%, 100%);
 
             .input {
                 height: 40px;
@@ -347,6 +355,26 @@
 
                 width: 40px;
             }
+
+            @media screen and (max-width: 1100px) {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-right: 0;
+                display: block;
+
+                .input {
+                    width: 75%;
+                    margin-right: 0;
+                    margin-top: 10px;
+                }
+
+                .tag {
+                    width: 100%;
+                    height: fit-content;
+                    margin-right: 0;
+                }
+            }
         }
     }
 
@@ -358,6 +386,10 @@
         height: 100%;
         align-items: center;
         text-align: left;
+
+        input {
+            color: #ffffff;
+        }
 
         .container {
             text-align: left;
@@ -408,8 +440,9 @@
     .buttons {
         margin-top: 150px;
 
-        .more {
-            display: inline-flex;
+        .moreb {
+            display: none;
+            //display: inline-flex;
             justify-content: center;
             align-items: center;
 
@@ -440,7 +473,7 @@
             }
         }
 
-        .more:hover {
+        .moreb:hover {
             cursor: pointer;
             background-color: #494949;
         }
@@ -470,6 +503,11 @@
                 margin-right: 30px;
             }
 
+            .cancel:hover {
+                cursor: pointer;
+                background-color: #e5e5e5;
+            }
+
             .confirm {
                 background-color: #343434;
                 color: #ffffff;
@@ -487,6 +525,11 @@
                 border-radius: 15px;
 
                 margin-left: 30px;
+            }
+
+            .confirm:hover {
+                cursor: pointer;
+                background-color: #494949;
             }
 
             @media screen and (max-width: 800px) {
@@ -515,7 +558,6 @@
         }
 
         @media screen and (max-width: 800px) {
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             margin-right: 0;
