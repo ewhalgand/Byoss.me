@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Footer, Navbar } from "./app/Components";
-import { Home, UserForm, SuccessCreate, Login, EditProfile, Manage } from "./app/Pages";
+import Je_postule  from "./app/Pages/je_postule/je_postule.jsx"
+import { Home, UserForm, SuccessCreate, Login, BetaLanding, EditProfile, Manage} from "./app/Pages";
 
 function App() {
 
@@ -29,6 +30,8 @@ function App() {
       <Route path="/create/success" element={<SuccessCreate />} />
       <Route path="/profile/edit" element={<EditProfile />} />
       <Route path="/profile/manage" element={<Manage />} />
+      <Route path="/beta/landing" element={<BetaLanding />} />
+      <Route path="/je_postule" element={<Je_postule />} />
     </Routes>
     <Footer />
   </>

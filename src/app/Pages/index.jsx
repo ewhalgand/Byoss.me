@@ -4,5 +4,5 @@ import SuccessCreate from "./success/SuccessCreate/SuccessCreate";
 import Login from "./login/Login";
 import EditProfile from "./profile/edit-profile/EditProfile";
 import Manage from "./profile/manage/Manage";
-
-export { Home, UserForm, SuccessCreate, Login, EditProfile, Manage };
+import BetaLanding from "./beta/BetaLanding";
+export { Home, UserForm, SuccessCreate, Login, BetaLanding, EditProfile, Manage };
