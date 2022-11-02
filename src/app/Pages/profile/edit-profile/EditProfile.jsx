@@ -276,7 +276,6 @@ const EditProfile = () => {
 
         fetch("https://api.byoss.me/update_picture/" + uuid, {
             method: 'POST',
-    
             body: formData,
             dataType: "jsonp"
         })
